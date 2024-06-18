@@ -10,13 +10,22 @@ function App() {
   const handleClick = (myLink) => () => {
     window.location.href=myLink;
   }
-
+  
 
   return (
     <>
-      <h1>Klimamonitor</h1>
-      <div style={{display: 'flex', width: '700px'}}>
-      {mediaBlocks.map(media => {
+      <h1>Newsmonitor</h1>
+      <p></p>
+      
+      <div style={{
+        display: 'flex',
+        //width: '100%',
+        width: '95vw',
+        border: '1px solid black',
+        overflow: 'auto'
+            }}>
+
+            {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
         const filledContainers = Array.from({ length: 50 }, (_, index) => {
@@ -25,8 +34,22 @@ function App() {
         });
 
         console.log(filledContainers);
+
         return (
-        <div key={media} className='mediaBlock'>
+
+        <div key={media} className='mediaBlock'
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100px',
+          padding: '10px',
+          margin: '10px',
+          border: '1px solid black',
+          
+        }}
+        >
           <h2>{media}</h2>
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
@@ -36,6 +59,7 @@ function App() {
             //const [links, setLinks] = useState(filteredData.map((data) => data.url));
             //links.shift()
             return (
+
               <div 
                 key={container}
                 data-tooltip-id={isRed ? "my-tooltip" : null}
@@ -46,6 +70,8 @@ function App() {
                 style={{
                   backgroundColor: isRed ? 'green' : 'lightgrey',
                   padding: '10px',
+                  margin: '0.5px',
+                  width: '70px'
                 }}
               >
                 <Tooltip id="my-tooltip" />
