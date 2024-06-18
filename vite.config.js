@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: '../html',
-    emptyOutDir: true
+    emptyOutDir: true,
+    watch: {
+      //include: '../public/klimadata.json'
+      //https://rollupjs.org/configuration-options/#watch
+    }
   }
 })
