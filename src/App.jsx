@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import data from '../public/klimadata.json'
+import exampleUrl from '../public/beispiel.png'
 import { Tooltip } from 'react-tooltip'
 
 function App() {
@@ -11,7 +12,6 @@ function App() {
     window.location.href=myLink;
   }
   
-
   return (
     <>
       <h1>Newsmonitor</h1>
@@ -26,7 +26,7 @@ function App() {
       zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
       Begriffe wie "Familienklima" oder "Betriebsklima" werden dabei rausgefiltert. Sollte 
       die ganze Anzeige grau sein, so finden sich gerade keine entsprechenden Artikel auf 
-      den Medienportalen, ein Beispiel findet man <a href="#"> hier</a>. Die Anzeige wird alle dreißig Minuten automatisch aktualisiert. 
+      den Medienportalen, ein Beispiel findet man <a href={exampleUrl}> hier</a>. Die Anzeige wird alle dreißig Minuten automatisch aktualisiert. 
       Die letzte Aktualisierung war XXX.</p>
       
       <div style={{
