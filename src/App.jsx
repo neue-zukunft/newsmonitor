@@ -21,8 +21,8 @@ function App() {
         border: '1px solid black',
         backgroundColor: 'lightgrey',
       }}
-      >Hier werden auf den angegeben Medienprotalen die Positionen der Artikel angezeigt, 
-      bei welchen die Buchstabenfolge "Klima" im Titel oder im Artikel vorkommt. Das können 
+      >Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
+      Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
       zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
       Begriffe wie "Familienklima" oder "Betriebsklima" werden dabei rausgefiltert. Sollte 
       die ganze Anzeige grau sein, so finden sich gerade keine entsprechenden Artikel auf 
