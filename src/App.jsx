@@ -15,12 +15,24 @@ function App() {
   return (
     <>
       <h1>Newsmonitor</h1>
-      <p></p>
+      <p
+      style={{
+        width: '90vw',
+        border: '1px solid black',
+        backgroundColor: 'lightgrey',
+      }}
+      >Hier werden auf den angegeben Medienprotalen die Positionen der Artikel angezeigt, 
+      bei welchen die Buchstabenfolge "Klima" im Titel oder im Artikel vorkommt. Das können 
+      zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
+      Begriffe wie "Familienklima" oder "Betriebsklima" werden dabei rausgefiltert. Sollte 
+      die ganze Anzeige grau sein, so finden sich gerade keine entsprechenden Artikel auf 
+      den Medienportalen, ein Beispiel findet man <a href="#"> hier</a>. Die Anzeige wird alle dreißig Minuten automatisch aktualisiert. 
+      Die letzte Aktualisierung war XXX.</p>
       
       <div style={{
         display: 'flex',
         //width: '100%',
-        width: '95vw',
+        width: '90vw',
         border: '1px solid black',
         overflow: 'auto'
             }}>
