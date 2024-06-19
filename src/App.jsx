@@ -46,7 +46,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       col-12 
       justify-content-xs-start 
       col-xs-12 
-      justify-content-sm-start 
+      justify-content-sm-end 
       col-sm-12 
       justify-content-md-end 
       col-md-5 
