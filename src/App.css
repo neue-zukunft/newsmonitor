@@ -20,7 +20,7 @@ ul {
 }
 
 .headlineblockLeft{
-  display: inline;
+  /* display: inline; */
   font-family: 'ProtestGroteskBold';
   font-style: italic;
   text-align: left;
@@ -35,12 +35,12 @@ ul {
 }
 
 .h2Left{
-  display: inline;
+  display: inline; 
   text-align: left
 }
 
 .headlineblockRight{
-  display: inline;
+  /* display: inline; */
   text-align: right;
   float: right;
   clear:right
@@ -54,14 +54,14 @@ ul {
 }
 
 .logo{
-  display: inline;
+  /* display: inline; */
   text-align: right;
   width: 100px;
   font-family: 'ProtestGrotesk'
 }
 
 .fristBlock{
-  width: 90vw;
+  /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey; */
   font-family: 'ProtestGrotesk';
@@ -70,7 +70,7 @@ ul {
 }
 
 .secondBlock{
-  width: 90vw;
+  /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey;*/
   font-family: 'ProtestGroteskBold';
@@ -82,7 +82,7 @@ ul {
 
 .tableBlock{
   display: flex;
-  width: 90vw;
+  /* width: 90vw; */
   /* border: 1px solid black; */
   overflow: auto
 }
@@ -103,7 +103,6 @@ ul {
   align-items: center;
   justify-content: center;
   width: 100px;
-  padding: 10px;
   margin: 10px;
   /* border: 1px solid black */
 }

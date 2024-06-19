@@ -18,10 +18,13 @@ const latestTimestamp = data.reduce((latest, item) => {
   return timestamp > latest ? timestamp : latest;
 }, 0);
 
-const formattedTimestamp = new Date(latestTimestamp-7200000).toLocaleString('de-DE', {
+const lastDate = new Date(latestTimestamp-7200000).toLocaleString('de-DE', {
   day: '2-digit',
   month: '2-digit',
   year: '2-digit',
+});
+
+const lastTime = new Date(latestTimestamp-7200000).toLocaleString('de-DE', {
   hour: '2-digit',
   minute: '2-digit'
 });
@@ -30,29 +33,34 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
 
   return (
     <>
-    <div className='headlineblockLeft'>
-      <h1 className='h1Left'>
+    <div class='container'>
+    <div class="row">
+    <div class='headlineblockLeft col-6'>
+      <h1 class='h1Left'>
         Newsmonitor
       </h1>
       
-      <h2 className='h2Left'>
+      <h2 class='h2Left'>
         alpha
       </h2>
     </div>
 
-    <div className='headlineblockRight'>
-      <div className='angebotRight'>
+    <div class='headlineblockRight col-6'>
+      <div class='angebotRight'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;</div>
       <img 
         src={logoUrl}
         alt='Logo'
-        className='logo'
+        class='logo'
       ></img>
     </div>
-
+    </div>
+    </div>
+    <div class='container'>
+    <div class='row'>
       <div style={{display:'inline-block'}}>
-      <p className='fristBlock'>
-        Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb. Letzte Aktualisierung: {formattedTimestamp}.</p>
+      <p class='fristBlock col-12'>
+        Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb.</p>
       {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
       // zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
@@ -61,15 +69,21 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       // den Medienportalen, ein Beispiel findet man <a href={exampleUrl}> hier</a>. Die Anzeige wird alle dreißig Minuten automatisch aktualisiert. 
       // Die letzte Aktualisierung war .</p> */}
       </div>
-
+      </div>
+      </div>
+      <div class='container'>
+      <div class='row'>
       <div style={{display:'inline'}}>
-        <p className='secondBlock'>
-          Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
+        <p class='secondBlock col-12'>
+          Stand {lastDate} {lastTime}: Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
         </p>
       </div>
+      </div>
+      </div>
 
-      <div className='tableBlock'>
-
+      <div class='container'>
+      <div class='row'>
+      <div class='col-12 tableBlock'>
             {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
@@ -82,8 +96,8 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
 
         return (
 
-        <div key={media} className='mediaBlock'>
-          <p className='mediaTitle'>{media}</p>
+        <div key={media} class='mediaBlock' >
+          <p class='mediaTitle'>{media}</p>
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
             //const links = filteredData.map(data => data.url);
@@ -117,6 +131,9 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
         );
         })}
       </div>
+      </div>
+      </div>
+
     </>
   )
 }
