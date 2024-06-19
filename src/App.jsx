@@ -1,17 +1,12 @@
-import { useState } from 'react'
 import './App.css'
 import data from '../public/klimadata.json'
-import exampleUrl from '../public/beispiel.png'
 import logoUrl from '../public/NZ-LOGO-RGB-bw.png'
 import { Tooltip } from 'react-tooltip'
 
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
+
   const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt"].sort(() => Math.random()-0.5)
-  
-  const handleClick = (myLink) => () => {
-    window.location.href=myLink;
-  }
 
 const latestTimestamp = data.reduce((latest, item) => {
   const timestamp = new Date(item.date).getTime();
@@ -40,7 +35,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
         Newsmonitor
       </h1>
       
-      <h2 class='h2Left'>
+      <h2 className='h2Left'>
         alpha
       </h2>
     </div>
@@ -63,7 +58,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       <img 
         src={logoUrl}
         alt='Logo'
-        class='logo'
+        className='logo'
       ></img>
     </div>
     </div>
@@ -101,14 +96,13 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
           return item ? item : null;
         });
 
-        console.log(filledContainers);
-
         return (
 
-        <div key={media} class='mediaBlock' >
-          <p class='mediaTitle'>{media}</p>
+        <div key={media} className='mediaBlock' >
+          <p className='mediaTitle'>{media}</p>
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
+
             //const links = filteredData.map(data => data.url);
 
             //const initialLinks = filteredData.map(data => data.url);
@@ -116,10 +110,9 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
             //links.shift()
             return (
 
-
               <div 
-                key={container}
-                data-tooltip-id={isRed ? "my-tooltip" : null}
+                key={`${media}-${container}`}
+                data-tooltip-id={isRed ? `${media}-${container}` : null}
                 data-tooltip-content={isRed ? filledContainers[container-1].title : null}
                 //onMouseEnter={isRed ? () => console.log('Test') : null}
                 //onClick={isRed ? handleClners[container-1].url) : null}
@@ -128,10 +121,11 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
                   padding: '10px',
                   margin: '0.5px',
                   width: '70px',
-                  height: '0.5px',
                 }}>
-                <Tooltip id="my-tooltip" />
+                  <Tooltip id={`${media}-${container}`} />
               </div>
+      
+   
             );
 
         })
