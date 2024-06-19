@@ -33,9 +33,9 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
 
   return (
     <>
-    <div class='container'>
+    <div class='vw-100 container'>
     <div class="row">
-    <div class='headlineblockLeft col-sm-6'>
+    <div class='headlineblockLeft col-12 col-xs-12 col-sm-12 col-md-7 col-lg-7'>
       <h1 class='h1Left'>
         Newsmonitor
       </h1>
@@ -45,9 +45,21 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       </h2>
     </div>
 
-    <div class='headlineblockRight col-sm-6'>
+    <div class='
+      d-flex 
+      justify-content-start 
+      col-12 
+      justify-content-xs-start 
+      col-xs-12 
+      justify-content-sm-start 
+      col-sm-12 
+      justify-content-md-end 
+      col-md-5 
+      justify-content-lg-end 
+      col-lg-5'>
       <div class='angebotRight'>
-        Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;</div>
+        Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;
+      </div>
       <img 
         src={logoUrl}
         alt='Logo'
@@ -55,11 +67,10 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       ></img>
     </div>
     </div>
-    </div>
-    <div class='container'>
+
     <div class='row'>
-      <div style={{display:'inline-block'}}>
-      <p class='fristBlock col-sm-12'>
+      <div class='col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+      <p class='firstBlock'>
         Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb.</p>
       {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
@@ -70,20 +81,18 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       // Die letzte Aktualisierung war .</p> */}
       </div>
       </div>
-      </div>
-      <div class='container'>
+   
       <div class='row'>
       <div style={{display:'inline'}}>
-        <p class='secondBlock col-sm-12'>
+        <p class='secondBlock col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           Stand {lastDate} {lastTime}: Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
         </p>
       </div>
       </div>
-      </div>
-
-      <div class='container'>
+     
       <div class='row'>
-      <div class='col-sm-12 tableBlock'>
+      <div class='overflow-auto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+      <div class='tableBlock'>
             {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
@@ -130,6 +139,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
         </div>
         );
         })}
+      </div>
       </div>
       </div>
       </div>

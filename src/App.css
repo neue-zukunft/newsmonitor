@@ -24,7 +24,9 @@ ul {
   font-family: 'ProtestGroteskBold';
   font-style: italic;
   text-align: left;
-  float: left
+  float: left;
+  /* font-size:3vw;
+  margin-bottom: 10px; */
 }
 
 .h1Left{
@@ -47,7 +49,7 @@ ul {
 }
 
 .angebotRight{
-  display: inline;
+  /* display: inline; */
   text-align: right;
   font-family: 'ProtestGrotesk';
   font-style: bold
@@ -60,7 +62,7 @@ ul {
   font-family: 'ProtestGrotesk'
 }
 
-.fristBlock{
+.firstBlock{
   /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey; */
@@ -101,13 +103,11 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  
   width: 100px;
   margin: 10px;
   /* border: 1px solid black */
 }
-
-
 
 @font-face {
   font-family: 'ProtestGrotesk'; /* Gewünschter Name */
