@@ -88,9 +88,10 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
         width: '90vw',
         //border: '1px solid black',
         //backgroundColor: 'lightgrey',
-        fontFamily: 'ProtestGrotesk'
+        fontFamily: 'ProtestGrotesk',
+        textAlign: 'block'
       }}>
-        Wieviel News zur Klimakrise findet sich jetzt gerade auf den ersten 50 Positionen der Stertseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb. Letzte Aktualisierung: {formattedTimestamp}.</p>
+        Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb. Letzte Aktualisierung: {formattedTimestamp}.</p>
       {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
       // zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
