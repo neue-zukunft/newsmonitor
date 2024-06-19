@@ -1,17 +1,12 @@
-import { useState } from 'react'
 import './App.css'
 import data from '../public/klimadata.json'
-import exampleUrl from '../public/beispiel.png'
 import logoUrl from '../public/NZ-LOGO-RGB-bw.png'
 import { Tooltip } from 'react-tooltip'
 
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
+
   const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt"].sort(() => Math.random()-0.5)
-  
-  const handleClick = (myLink) => () => {
-    window.location.href=myLink;
-  }
 
 const latestTimestamp = data.reduce((latest, item) => {
   const timestamp = new Date(item.date).getTime();
@@ -33,33 +28,33 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
 
   return (
     <>
-    <div class='container'>
-    <div class="row">
-    <div class='headlineblockLeft col-sm-6'>
-      <h1 class='h1Left'>
+    <div className='container'>
+    <div className="row">
+    <div className='headlineblockLeft col-sm-6'>
+      <h1 className='h1Left'>
         Newsmonitor
       </h1>
       
-      <h2 class='h2Left'>
+      <h2 className='h2Left'>
         alpha
       </h2>
     </div>
 
-    <div class='headlineblockRight col-sm-6'>
-      <div class='angebotRight'>
+    <div className='headlineblockRight col-sm-6'>
+      <div className='angebotRight'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;</div>
       <img 
         src={logoUrl}
         alt='Logo'
-        class='logo'
+        className='logo'
       ></img>
     </div>
     </div>
     </div>
-    <div class='container'>
-    <div class='row'>
+    <div className='container'>
+    <div className='row'>
       <div style={{display:'inline-block'}}>
-      <p class='fristBlock col-sm-12'>
+      <p className='fristBlock col-sm-12'>
         Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb.</p>
       {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
@@ -71,19 +66,19 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       </div>
       </div>
       </div>
-      <div class='container'>
-      <div class='row'>
+      <div className='container'>
+      <div className='row'>
       <div style={{display:'inline'}}>
-        <p class='secondBlock col-sm-12'>
+        <p className='secondBlock col-sm-12'>
           Stand {lastDate} {lastTime}: Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
         </p>
       </div>
       </div>
       </div>
 
-      <div class='container'>
-      <div class='row'>
-      <div class='col-sm-12 tableBlock'>
+      <div className='container'>
+      <div className='row'>
+      <div className='col-sm-12 tableBlock'>
             {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
@@ -92,14 +87,13 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
           return item ? item : null;
         });
 
-        console.log(filledContainers);
-
         return (
 
-        <div key={media} class='mediaBlock' >
-          <p class='mediaTitle'>{media}</p>
+        <div key={media} className='mediaBlock' >
+          <p className='mediaTitle'>{media}</p>
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
+
             //const links = filteredData.map(data => data.url);
 
             //const initialLinks = filteredData.map(data => data.url);
@@ -107,10 +101,9 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
             //links.shift()
             return (
 
-
               <div 
-                key={container}
-                data-tooltip-id={isRed ? "my-tooltip" : null}
+                key={`${media}-${container}`}
+                data-tooltip-id={isRed ? `${media}-${container}` : null}
                 data-tooltip-content={isRed ? filledContainers[container-1].title : null}
                 //onMouseEnter={isRed ? () => console.log('Test') : null}
                 //onClick={isRed ? handleClners[container-1].url) : null}
@@ -119,10 +112,11 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
                   padding: '10px',
                   margin: '0.5px',
                   width: '70px',
-                  height: '0.5px',
                 }}>
-                <Tooltip id="my-tooltip" />
+                  <Tooltip id={`${media}-${container}`} />
               </div>
+      
+   
             );
 
         })
