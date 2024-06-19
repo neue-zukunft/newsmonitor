@@ -35,7 +35,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
     <>
     <div class='container'>
     <div class="row">
-    <div class='headlineblockLeft col-6'>
+    <div class='headlineblockLeft col-sm-6'>
       <h1 class='h1Left'>
         Newsmonitor
       </h1>
@@ -45,7 +45,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       </h2>
     </div>
 
-    <div class='headlineblockRight col-6'>
+    <div class='headlineblockRight col-sm-6'>
       <div class='angebotRight'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;</div>
       <img 
@@ -59,7 +59,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
     <div class='container'>
     <div class='row'>
       <div style={{display:'inline-block'}}>
-      <p class='fristBlock col-12'>
+      <p class='fristBlock col-sm-12'>
         Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb.</p>
       {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
@@ -74,7 +74,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
       <div class='container'>
       <div class='row'>
       <div style={{display:'inline'}}>
-        <p class='secondBlock col-12'>
+        <p class='secondBlock col-sm-12'>
           Stand {lastDate} {lastTime}: Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
         </p>
       </div>
@@ -83,7 +83,7 @@ const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
 
       <div class='container'>
       <div class='row'>
-      <div class='col-12 tableBlock'>
+      <div class='col-sm-12 tableBlock'>
             {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
