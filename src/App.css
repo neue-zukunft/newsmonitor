@@ -27,40 +27,32 @@ ul {
 @font-face {
   font-family: 'ProtestGrotesk'; /* Gewünschter Name */
   src: 
-       url('./fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-Regular.woff') 
+       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-Regular.woff') 
             format('woff'), 
            /* für moderne Browser */
-       url('./fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular.ttf') 
+       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular.ttf') 
             format('truetype');
           /* für Safari, Android, iOS */
  }
  @font-face {
   font-family: 'ProtestGroteskItalic'; /* Gewünschter Name */
   src: 
-       url('./fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-RegularItalic.woff') 
+       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-RegularItalic.woff') 
             format('woff'), 
            /* für moderne Browser */
-       url('./fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular+Italic.ttf') 
+       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular+Italic.ttf') 
             format('truetype');
           /* für Safari, Android, iOS */
  }
+
+ 
  @font-face {
   font-family: 'ProtestGroteskBold'; /* Gewünschter Name */
   src: 
-       url('./fonts/ProtestGrotesk-190-Bold+Italic/01_Font\ Files/02_Web/ProtestGrotesk-190-Bold.woff') 
+       url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font\ Files/02_Web/ProtestGrotesk-190-Bold.woff') 
             format('woff'), 
            /* für moderne Browser */
-       url('./fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/03_Variable/ProtestGrotesk-190_Bold+Italic.ttf') 
-            format('truetype');
-          /* für Safari, Android, iOS */
- }
- @font-face {
-  font-family: 'ProtestGroteskBold'; /* Gewünschter Name */
-  src: 
-       url('./fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/02_Web/ProtestGrotesk-190-Bold.woff') 
-            format('woff'), 
-           /* für moderne Browser */
-       url('./fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/03_Variable/ProtestGrotesk-190_Bold+Italic.ttf') 
+       url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/03_Variable/ProtestGrotesk-190_Bold+Italic.ttf') 
             format('truetype');
           /* für Safari, Android, iOS */
  }
