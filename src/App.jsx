@@ -35,7 +35,13 @@ const positions = Array.from({ length: 50 }, (_, index) => {
   }
 });
 
-console.log(positions);
+const handleClick = (myLink) => () => {
+  window.open(myLink, '_blank');
+  
+  //window.location.target="_blank";
+  //window.location.href=myLink;
+}
+
 
   return (
     <>
@@ -62,14 +68,15 @@ console.log(positions);
       justify-content-lg-end 
       col-lg-5'
       >
-      <div class='angebotRight d-none d-lg-block d-xl-none'>
+      <div class='angebotRight d-none d-lg-block'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;
       </div>
-      <img 
+      <a href="https://www.neuezukunft.info" 
+        target="_blank"><img 
         src={logoUrl}
         alt='Logo'
-        className='logo d-none d-lg-block d-xl-none'
-      ></img>
+        className='logo d-none d-lg-block'
+      ></img></a>
     </div>
     </div>
 
@@ -120,7 +127,6 @@ console.log(positions);
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
             
-            console.log(container);
             //const links = filteredData.map(data => data.url);
 
             //const initialLinks = filteredData.map(data => data.url);
@@ -133,7 +139,7 @@ console.log(positions);
                 data-tooltip-id={isRed ? `${media}-${container}` : null}
                 data-tooltip-content={isRed ? filledContainers[container-1].title : null}
                 //onMouseEnter={isRed ? () => console.log('Test') : null}
-                //onClick={isRed ? handleClners[container-1].url) : null}
+                onClick={isRed ? handleClick(filledContainers[container-1].url) : null}
                 style={{
                   backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)',
                   paddingTop: '4.5px',
@@ -144,6 +150,8 @@ console.log(positions);
                   <Tooltip id={`${media}-${container}`} 
                   style={{
                     width: '200px',
+                    backgroundColor: 'rgb(219,191,255)',
+                    color: 'black',
                   }}/>
               </div>
       
