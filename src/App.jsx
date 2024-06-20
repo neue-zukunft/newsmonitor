@@ -35,6 +35,19 @@ const positions = Array.from({ length: 50 }, (_, index) => {
   }
 });
 
+const refAssignCallback = (ref) => {
+  if (ref) {
+    //ref available = mounted.
+    var element = ref;
+    var scrollWidth = element.scrollWidth;
+    var clientWidth = element.getBoundingClientRect().width;
+
+    //explicitly set the scrollTop position of the scrollContainer
+    element.scrollLeft = 1000;
+    element.scroll({ left: -1000, behavior: 'smooth' })
+  } 
+}; 
+
 const handleClick = (myLink) => () => {
   window.open(myLink, '_blank');
   
@@ -83,7 +96,7 @@ const handleClick = (myLink) => () => {
     <div class='row'>
       <div class='col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <p class='firstBlock'>
-        Erläuterung siehe <a href='#'>unten</a>.</p>
+        Erläuterung siehe <a href='#about'>unten</a>.</p>
 
       {/* 
       Wieviele Artikel zur Klimakrise finden sich derzeit auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? 
@@ -108,7 +121,7 @@ const handleClick = (myLink) => () => {
      
       <div class='row'>
       <div class='overflow-auto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-      <div class='tableBlock'>
+      <div className='tableBlock' ref={refAssignCallback}>
         
             {mediaBlocks.map(media => {
         const filteredData = data.filter(d => d.name === media);
@@ -183,10 +196,9 @@ const handleClick = (myLink) => () => {
       </div>
       <div class='row'>
       <div class='abouttext'>
-
-<div class='row'>
+<div class='row' id='about'>
       <div style={{display:'inline'}}>
-        <p class='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+        <p class='linebeforeabout col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
         &nbsp;
         </p>
       </div>

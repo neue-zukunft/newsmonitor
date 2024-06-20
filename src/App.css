@@ -2,6 +2,7 @@
   margin: auto;
   padding: 0rem;
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 /* h1 {
@@ -130,6 +131,14 @@ ul {
 h2 {
   font-family: 'ProtestGrotesk';
 }
+
+.linebeforeabout{
+  color: rgb(255,100,0);
+  background-color: rgb(255,100,0);
+  width: 95vw;
+  height: 1px;
+}
+
 .abouttext{
   font-family: 'Inter';
   font-size: 13px;
