@@ -153,17 +153,32 @@ const handleClick = (myLink) => () => {
               minute: '2-digit'
             }));
 
+            
+
+            const title = filteredData.map(data => data.title);
+            const datePublished = Math.max(...filteredData.map(data => data.date_published-7200000));
+
+            //const latestPosition = filteredData.find(data => data.date === latestTimestamp)?.position;
+            const highestPosition = Math.min(...filteredData.map(data => data.position));
+
+
+            const now = new Date();
+            const timeDiff = now - new Date(datePublished);
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const timeDiffString = `${days} Tage ${hours} Stunden ${minutes} Minuten`;
+
             return (
 
               <div 
                 key={`${media}-${container}`}
                 data-tooltip-id={isRed ? `${media}-${container}` : null}
-                data-tooltip-content={
-                  isRed ? 
-                  filledContainers[container-1].title + " --- Artikel online seit: "+publishDate[0]
-                  
-                  : null}
                 //onMouseEnter={isRed ? () => console.log('Test') : null}
+
+              
+
                 onClick={isRed ? handleClick(filledContainers[container-1].url) : null}
                 style={{
                   backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)',
@@ -179,11 +194,14 @@ const handleClick = (myLink) => () => {
                     //backgroundColor: 'rgb(219,191,255)',
                     //color: 'black',
                   }}
-                  />
+                  > 
+                    {media}: {title}<br/>
+                    Artikel erschienen vor: {timeDiffString}<br/>
+                    Höchste Position: {highestPosition}<br/>
+                    Position aktuell: {container}
+                  </Tooltip>
                   </div>
               </div>
-      
-   
             );
 
         })
