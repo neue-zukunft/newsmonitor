@@ -127,6 +127,21 @@ ul {
   /* border: 1px solid black */
 }
 
+h2 {
+  font-family: 'ProtestGrotesk';
+}
+.abouttext{
+  font-family: 'Inter';
+  font-size: 13px;
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+  color: black;
+  width: 70vw;
+  /* border: 1px solid black */
+
+}
+
 @font-face {
   font-family: 'ProtestGrotesk'; /* Gewünschter Name */
   src: 

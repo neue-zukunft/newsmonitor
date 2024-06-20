@@ -101,7 +101,7 @@ const handleClick = (myLink) => () => {
       <div class='row'>
       <div style={{display:'inline'}}>
         <p class='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-        Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
+        Zur Zeit handeln {formattedDataLength} der ersten 50 Artikel auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
         </p>
       </div>
       </div>
@@ -132,12 +132,24 @@ const handleClick = (myLink) => () => {
             //const initialLinks = filteredData.map(data => data.url);
             //const [links, setLinks] = useState(filteredData.map((data) => data.url));
             //links.shift()
+            const publishDate = filteredData.map(data => new Date(data.date_published-7200000).toLocaleString('de-DE', {
+              day: '2-digit',
+              month: '2-digit',
+              year: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit'
+            }));
+
             return (
 
               <div 
                 key={`${media}-${container}`}
                 data-tooltip-id={isRed ? `${media}-${container}` : null}
-                data-tooltip-content={isRed ? filledContainers[container-1].title : null}
+                data-tooltip-content={
+                  isRed ? 
+                  filledContainers[container-1].title + " --- Artikel online seit: "+publishDate[0]
+                  
+                  : null}
                 //onMouseEnter={isRed ? () => console.log('Test') : null}
                 onClick={isRed ? handleClick(filledContainers[container-1].url) : null}
                 style={{
@@ -147,12 +159,15 @@ const handleClick = (myLink) => () => {
                   margin: '2px',
                   width: '90px',
                 }}>
+                  <div class='d-none d-lg-block'>
                   <Tooltip id={`${media}-${container}`} 
                   style={{
                     width: '200px',
-                    backgroundColor: 'rgb(219,191,255)',
-                    color: 'black',
-                  }}/>
+                    //backgroundColor: 'rgb(219,191,255)',
+                    //color: 'black',
+                  }}
+                  />
+                  </div>
               </div>
       
    
@@ -164,6 +179,42 @@ const handleClick = (myLink) => () => {
         );
         })}
       </div>
+      </div>
+      </div>
+      <div class='row'>
+      <div class='abouttext'>
+
+<div class='row'>
+      <div style={{display:'inline'}}>
+        <p class='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+        &nbsp;
+        </p>
+      </div>
+      </div>
+<h2>Was ist hier zu sehen?</h2>
+
+Wir von NEUE ZUKUNFT denken, dass die Klimakrise vielen journalistischen Medien deutlich zu wenig Aufmerksamkeit erfährt. Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wieviele der ersten 50 Beiträge auf den Startseiten von deutschsprachigen Nachrichten-Websites von der Klimakrise handeln. 
+
+Die Seiten werden alle 30 Minuten ausgewertet. Der Titel und Vorspann jedes Artikels werden nach Begriffen, die “Klima” enthalten, gescannt; bestimmte Begriffe wie “Klimaanlage” oder “akklimatisieren” werden nicht berücksichtig.
+
+Per mouseover/touch ist der Titel entsprechender Beiträge abrufbar - per Klick/weiterer touch wird er im Browser geöffnet.
+<br/>
+<br/>
+<h2>Woher stammen die Daten?</h2>
+
+Wir holen die Daten über die Beiträge bei <a href="https://ueberblick.news/" target="_blank">https://ueberblick.news/</a> ab. Danke dafür, Marvin!
+<br/>
+<br/>
+<h2>Mitmachen</h2>
+
+Wenn Du die Entwicklung dieses Tools mitunterstützen willst, findest Du hier den Code (Github). Wir möchten das Tool weiter ausbauen, um noch weitere Visualisierungen und Auswertungen zeigen. Auch wollen wir die Daten als Open Data zur Verfügung zu stellen.
+
+Generell suchen wir nach Menschen, die bei NEUE ZUKUNFT in unterschiedlichen Rollen mitwirken; Du kannst uns auch finanziell unterstützen.
+<br/>
+<br/>
+<h2>Mitwirkende</h2>
+
+Norman Schumann, Ina Schieferdecker, Marvin Mai, Felix Michel, Lorenz Matzat
       </div>
       </div>
       </div>
