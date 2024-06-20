@@ -1,6 +1,7 @@
 import './App.css'
 import data from '../public/klimadata.json'
 import logoUrl from '../public/NZ-LOGO-RGB-bw.png'
+import logoNMUrl from '../public/logo_newsm.png'
 import { Tooltip } from 'react-tooltip'
 
 function App() {
@@ -41,13 +42,11 @@ console.log(positions);
     <div class='vw-100 container'>
     <div class="row">
     <div class='headlineblockLeft col-12 col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7'>
-      <h1 class='h1Left'>
-        Newsmonitor
-      </h1>
-      
-      <h2 className='h2Left'>
-        alpha
-      </h2>
+    <img 
+        src={logoNMUrl}
+        alt='Logo'
+        className='logoNM'
+      ></img>
     </div>
 
     <div class='
@@ -61,14 +60,15 @@ console.log(positions);
       justify-content-md-end 
       col-md-5 
       justify-content-lg-end 
-      col-lg-5'>
-      <div class='angebotRight'>
+      col-lg-5'
+      >
+      <div class='angebotRight d-none d-lg-block d-xl-none'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;
       </div>
       <img 
         src={logoUrl}
         alt='Logo'
-        className='logo'
+        className='logo d-none d-lg-block d-xl-none'
       ></img>
     </div>
     </div>
@@ -76,8 +76,12 @@ console.log(positions);
     <div class='row'>
       <div class='col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <p class='firstBlock'>
-        Wieviel News zur Klimakrise finden sich jetzt gerade auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? Mehr zum Hintergrund und Methodik unterhalb.</p>
-      {/* // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
+        Erläuterung siehe <a href='#'>unten</a>.</p>
+
+      {/* 
+      Wieviele Artikel zur Klimakrise finden sich derzeit auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? 
+
+      // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
       // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
       // zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
       // Begriffe wie "Familienklima" oder "Betriebsklima" werden dabei rausgefiltert. Sollte 
@@ -90,7 +94,7 @@ console.log(positions);
       <div class='row'>
       <div style={{display:'inline'}}>
         <p class='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-          Stand {lastDate} {lastTime}: Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Starseiten von der Klimakrise.
+        Zur Zeit handeln {formattedDataLength} der Beiträge auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
         </p>
       </div>
       </div>
@@ -132,11 +136,15 @@ console.log(positions);
                 //onClick={isRed ? handleClners[container-1].url) : null}
                 style={{
                   backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)',
-                  padding: '2px',
-                  margin: '0.5px',
+                  paddingTop: '4.5px',
+                  paddingBottom: '4.5px',
+                  margin: '2px',
                   width: '90px',
                 }}>
-                  <Tooltip id={`${media}-${container}`} />
+                  <Tooltip id={`${media}-${container}`} 
+                  style={{
+                    width: '200px',
+                  }}/>
               </div>
       
    

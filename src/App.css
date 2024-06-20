@@ -51,15 +51,29 @@ ul {
 .angebotRight{
   /* display: inline; */
   text-align: right;
-  font-family: 'ProtestGrotesk';
-  font-style: bold
+  font-family: 'Inter';
+  font-style: bold; 
+  margin-top: 10px;
+  font-size: 12px
+
 }
 
 .logo{
   /* display: inline; */
   text-align: right;
-  width: 100px;
-  font-family: 'ProtestGrotesk'
+  width: auto;
+  height:50px;
+  margin-bottom: 10px; 
+  margin-top: 10px
+}
+
+.logoNM{
+  /* display: inline; */
+  text-align: right;
+  width: 250px;
+  font-family: 'ProtestGrotesk';
+  margin-bottom: 10px; 
+  margin-top: 10px
 }
 
 .firstBlock{
@@ -69,17 +83,20 @@ ul {
   font-family: 'ProtestGrotesk';
   text-align: left;
   line-height: 150%;
+  width: 70vw;
 }
 
 .secondBlock{
   /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey;*/
-  font-family: 'ProtestGroteskBold';
+  font-family: 'Inter';
   background-color: rgb(255,100,0);
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 5px;
+  text-align: left ;
 }
 
 .tableBlock{
@@ -90,11 +107,12 @@ ul {
 }
 
 .mediaTitle{
-  font-family: 'ProtestGroteskBold';
+  font-family: 'Inter';
   font-size: 12px;
   text-align: center;
   padding: 5px;
   margin: 5px;
+  color: black
   /* border: 1px solid black */
 
 }
