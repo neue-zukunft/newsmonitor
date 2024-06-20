@@ -19,7 +19,11 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: rgb(255,100,0);
+  color: rgb(219,191,255);
+}
+
+a:active {
+  color: rgb(219,191,255);
 }
 
 body {
@@ -60,9 +64,7 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
+
   button {
     background-color: #f9f9f9;
   }
