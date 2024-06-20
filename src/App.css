@@ -156,6 +156,7 @@ height: 9.23px;
 
 h2 {
   font-family: 'ProtestGrotesk';
+  font-size: 22px;
 }
 
 .linebeforeabout{
@@ -167,12 +168,12 @@ h2 {
 
 .abouttext{
   font-family: 'Inter';
-  font-size: 13px;
+  font-size: 14px;
   text-align: left;
   padding: 5px;
   margin: 5px;
   color: black;
-  width: 70vw;
+  width: 500px;
   /* border: 1px solid black */
 
 }
