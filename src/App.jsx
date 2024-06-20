@@ -7,7 +7,14 @@ import { Tooltip } from 'react-tooltip'
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
-  const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt"].sort(() => Math.random()-0.5)
+  const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt"]
+  
+  const mediaBlocksP = [...mediaBlocks, "Position"].sort(() => Math.random() - 0.5);
+  const positionIndex = mediaBlocksP.indexOf("Position");
+  if (positionIndex !== -1) {
+    mediaBlocksP.splice(positionIndex, 1);
+    mediaBlocksP.unshift("Position");
+  }
 
 const latestTimestamp = data.reduce((latest, item) => {
   const timestamp = new Date(item.date).getTime();
@@ -39,12 +46,12 @@ const refAssignCallback = (ref) => {
   if (ref) {
     //ref available = mounted.
     var element = ref;
-    var scrollWidth = element.scrollWidth;
-    var clientWidth = element.getBoundingClientRect().width;
+    //var scrollWidth = element.scrollWidth;
+    //var clientWidth = element.getBoundingClientRect().width;
 
     //explicitly set the scrollTop position of the scrollContainer
     element.scrollLeft = 1000;
-    element.scroll({ left: -1000, behavior: 'smooth' })
+    element.scroll({ left: -1000, behavior: 'smooth' });
   } 
 }; 
 
@@ -123,44 +130,29 @@ const handleClick = (myLink) => () => {
       <div class='overflow-auto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <div className='tableBlock' ref={refAssignCallback}>
         
-            {mediaBlocks.map(media => {
+            {mediaBlocksP.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
         const filledContainers = Array.from({ length: 50 }, (_, index) => {
           const item = filteredData.find(data => data.position === index + 1);
           return item ? item : null;
         });
-        
-        
 
         return (
-        <div key={media} className='mediaBlock' >
-          <p className='mediaTitle'>{media}</p>
+        
+        <div key={media} class='mediaBlock' >
+
+          {media === "Position" ? <p class='mediaTitleP'>&nbsp;</p> : <p className='mediaTitle'>{media}</p>}
  
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
-            
-            //const links = filteredData.map(data => data.url);
-
-            //const initialLinks = filteredData.map(data => data.url);
-            //const [links, setLinks] = useState(filteredData.map((data) => data.url));
-            //links.shift()
-            const publishDate = filteredData.map(data => new Date(data.date_published-7200000).toLocaleString('de-DE', {
-              day: '2-digit',
-              month: '2-digit',
-              year: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit'
-            }));
-
-            
 
             const title = filteredData.map(data => data.title);
             const datePublished = Math.max(...filteredData.map(data => data.date_published-7200000));
 
             //const latestPosition = filteredData.find(data => data.date === latestTimestamp)?.position;
             const highestPosition = Math.min(...filteredData.map(data => data.position));
-
+            const highestPositiondata = Math.min(filteredData.map(data => data.highest_position));
 
             const now = new Date();
             const timeDiff = now - new Date(datePublished);
@@ -171,21 +163,14 @@ const handleClick = (myLink) => () => {
             const timeDiffString = `${days} Tage ${hours} Stunden ${minutes} Minuten`;
 
             return (
-
+              media === "Position" ? <div class='position align-middle'>{container}</div> :
               <div 
+                class='mediaContainer'
                 key={`${media}-${container}`}
                 data-tooltip-id={isRed ? `${media}-${container}` : null}
-                //onMouseEnter={isRed ? () => console.log('Test') : null}
-
-              
-
                 onClick={isRed ? handleClick(filledContainers[container-1].url) : null}
                 style={{
-                  backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)',
-                  paddingTop: '4.5px',
-                  paddingBottom: '4.5px',
-                  margin: '2px',
-                  width: '90px',
+                  backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)'
                 }}>
                   <div class='d-none d-lg-block'>
                   <Tooltip id={`${media}-${container}`} 

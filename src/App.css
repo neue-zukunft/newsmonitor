@@ -104,7 +104,7 @@ ul {
   display: flex;
   /* width: 90vw; */
   /* border: 1px solid black; */
-  overflow: auto
+  overflow: auto;
 }
 
 .mediaTitle{
@@ -115,17 +115,43 @@ ul {
   margin: 5px;
   color: black
   /* border: 1px solid black */
+}
 
+.mediaTitleP{
+  font-family: 'Inter';
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  margin-right: 5px;
+  margin-top: -11px;
+  color: black
+  /* border: 1px solid black */
 }
 
 .mediaBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   /* width: 1000px; */
   margin: 1px;
   /* border: 1px solid black */
+}
+
+.mediaContainer{
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  margin: 2px;
+  width: 90px;
+}
+
+.position{
+position: relative;
+font-size: 8.69px;
+padding-top: 4.5px;
+padding-bottom: 4.5px;
+margin: 1.9px;
+width: 0px;
+height: 9.23px;
 }
 
 h2 {
