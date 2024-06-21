@@ -158,18 +158,16 @@ ul {
   font-family: 'Inter';
   background-color: rgb(255,100,0);
   color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding: 5px;
   text-align: left ;
-  width: 95vw;
 }
 
 .tableBlock{
   display: flex;
   /* width: 90vw; */
   /* border: 1px solid black; */
-  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .mediaTitle{
@@ -225,10 +223,9 @@ h2 {
 }
 
 .linebeforeabout{
-  color: rgb(255,100,0);
-  background-color: rgb(255,100,0);
-  width: 95vw;
-  height: 1px;
+  border: 1px solid rgb(255,100,0);
+  width: 100%;
+  margin: 16px 0;
 }
 
 .abouttext{
