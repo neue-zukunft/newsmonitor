@@ -65,9 +65,9 @@ const handleClick = (myLink) => () => {
 
   return (
     <>
-    <div class='vw-100 container'>
-    <div class="row">
-    <div class='headlineblockLeft col-12 col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7'>
+    <div className='container'>
+    <div className="row">
+    <div className='headlineblockLeft col-12 col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7'>
     <img 
         src={logoNMUrl}
         alt='Logo'
@@ -75,7 +75,7 @@ const handleClick = (myLink) => () => {
       ></img>
     </div>
 
-    <div class='
+    <div className='
       d-flex 
       justify-content-start 
       col-12 
@@ -88,7 +88,7 @@ const handleClick = (myLink) => () => {
       justify-content-lg-end 
       col-lg-5'
       >
-      <div class='angebotRight d-none d-lg-block'>
+      <div className='angebotRight d-none d-lg-block'>
         Ein&nbsp;Angebot&nbsp;von&nbsp;&nbsp;
       </div>
       <a href="https://www.neuezukunft.info" 
@@ -100,9 +100,9 @@ const handleClick = (myLink) => () => {
     </div>
     </div>
 
-    <div class='row'>
-      <div class='col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-      <p class='firstBlock'>
+    <div className='row'>
+      <div className='col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+      <p className='firstBlock'>
         Erläuterung siehe <a href='#about'>unten</a>.</p>
 
       {/* 
@@ -118,16 +118,16 @@ const handleClick = (myLink) => () => {
       </div>
       </div>
    
-      <div class='row'>
+      <div className='row'>
       <div style={{display:'inline'}}>
-        <p class='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+        <p className='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
         Zur Zeit handeln {formattedDataLength} der ersten 50 Artikel auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
         </p>
       </div>
       </div>
      
-      <div class='row'>
-      <div class='overflow-auto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+      <div className='row'>
+      <div className='overflow-auto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <div className='tableBlock' ref={refAssignCallback}>
         
             {mediaBlocksP.map(media => {
@@ -140,9 +140,9 @@ const handleClick = (myLink) => () => {
 
         return (
         
-        <div key={media} class='mediaBlock' >
+        <div key={media} className='mediaBlock' >
 
-          {media === "Position" ? <p class='mediaTitleP'>&nbsp;</p> : <p className='mediaTitle'>{media}</p>}
+          {media === "Position" ? <p className='mediaTitleP'>&nbsp;</p> : <p className='mediaTitle'>{media}</p>}
  
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
@@ -163,16 +163,16 @@ const handleClick = (myLink) => () => {
             const timeDiffString = `${days} Tage ${hours} Stunden ${minutes} Minuten`;
 
             return (
-              media === "Position" ? <div class='position align-middle'>{container}</div> :
+              media === "Position" ? <div className='position align-middle'>{container}</div> :
               <div 
-                class='mediaContainer'
+                className='mediaContainer'
                 key={`${media}-${container}`}
                 data-tooltip-id={isRed ? `${media}-${container}` : null}
                 onClick={isRed ? handleClick(filledContainers[container-1].url) : null}
                 style={{
                   backgroundColor: isRed ? 'rgb(255,100,0)' : 'rgb(234,232,228)'
                 }}>
-                  <div class='d-none d-lg-block'>
+                  <div className='d-none d-lg-block'>
                   <Tooltip id={`${media}-${container}`} 
                   style={{
                     width: '200px',
@@ -195,15 +195,14 @@ const handleClick = (myLink) => () => {
         );
         })}
       </div>
+      <div className="linebeforeabout" />
       </div>
+
       </div>
-      <div class='row'>
-      <div class='abouttext'>
-<div class='row' id='about'>
+      <div className='row'>
+      <div className='abouttext'>
+        <div className='row' id='about'>
       <div style={{display:'inline'}}>
-        <p class='linebeforeabout col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-        &nbsp;
-        </p>
       </div>
       </div>
 <h2>Was ist hier zu sehen?</h2>
