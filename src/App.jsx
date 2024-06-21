@@ -142,7 +142,7 @@ const handleClick = (myLink) => () => {
         
         <div key={media} className='mediaBlock' >
 
-          {media === "Position" ? <p className='mediaTitleP'>&nbsp;</p> : <p className='mediaTitle'>{media}</p>}
+          {media === "Position" ? <p className='mediaTitle'>&nbsp;</p> : <p className='mediaTitle'>{media}</p>}
  
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
@@ -163,7 +163,7 @@ const handleClick = (myLink) => () => {
             const timeDiffString = `${days} Tage ${hours} Stunden ${minutes} Minuten`;
 
             return (
-              media === "Position" ? <div className='position align-middle'>{container}</div> :
+              media === "Position" ? <div className='position'><span>{container === 1 ? container : container % 5 ? '' : container}</span></div> :
               <div 
                 className='mediaContainer'
                 key={`${media}-${container}`}
