@@ -98,6 +98,7 @@ ul {
   padding-bottom: 5px;
   padding-left: 5px;
   text-align: left ;
+  width: 95vw;
 }
 
 .tableBlock{
@@ -145,11 +146,11 @@ ul {
 }
 
 .position{
-position: relative;
 font-size: 8.69px;
 padding-top: 4.5px;
 padding-bottom: 4.5px;
 margin: 1.9px;
+margin-right: auto;
 width: 0px;
 height: 9.23px;
 }
