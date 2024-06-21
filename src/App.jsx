@@ -180,7 +180,7 @@ const handleClick = (myLink) => () => {
                     //color: 'black',
                   }}
                   > 
-                    {media}: {title}<br/>
+                    {media}: {title}<br/><br/>
                     Artikel erschienen vor: {timeDiffString}<br/>
                     Höchste Position: {highestPosition}<br/>
                     Position aktuell: {container}
