@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tooltip'
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
-  const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt"]
+  const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt", "SRF", "NZZ", "Tagesanzeiger"]
   
   const mediaBlocksP = [...mediaBlocks, "Position"].sort(() => Math.random() - 0.5);
   const positionIndex = mediaBlocksP.indexOf("Position");
@@ -19,7 +19,7 @@ function App() {
 const latestTimestamp = data.reduce((latest, item) => {
   const timestamp = new Date(item.date).getTime();
   return timestamp > latest ? timestamp : latest;
-}, 0);
+}, new Date().getTime()+7200000);
 
 const lastDate = new Date(latestTimestamp-7200000).toLocaleString('de-DE', {
   day: '2-digit',
@@ -32,7 +32,7 @@ const lastTime = new Date(latestTimestamp-7200000).toLocaleString('de-DE', {
   minute: '2-digit'
 });
 
-const formattedDataLength = (data.length / 450 * 100).toFixed(1) + '%';
+const formattedDataLength = (data.length/(mediaBlocks.length*50) * 100).toFixed(1) + '%';
 
 const positions = Array.from({ length: 50 }, (_, index) => {
   if ((index + 1) % 5 === 0) {
