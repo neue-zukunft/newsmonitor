@@ -133,7 +133,7 @@ const handleClick = (myLink) => () => {
             {mediaBlocksP.map(media => {
         const filteredData = data.filter(d => d.name === media);
 
-        const filledContainers = Array.from({ length: 50 }, (_, index) => {
+        var filledContainers = Array.from({ length: 50 }, (_, index) => {
           const item = filteredData.find(data => data.position === index + 1);
           return item ? item : null;
         });
@@ -147,23 +147,43 @@ const handleClick = (myLink) => () => {
           {containers.map(container => {
             const isRed = filteredData.map(data => data.position).includes(container);
 
-            const title = filteredData.map(data => data.title);
-            const datePublished = Math.max(...filteredData.map(data => data.date_published-7200000));
-
-            //const latestPosition = filteredData.find(data => data.date === latestTimestamp)?.position;
-            const highestPosition = Math.min(...filteredData.map(data => data.position));
-            const highestPositiondata = Math.min(filteredData.map(data => data.highest_position));
+            const test = filledContainers.map(data => data);
 
             const now = new Date();
-            const timeDiff = now - new Date(datePublished);
-            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            for (let i = 0; i < filledContainers.length; i++) {
+              if (filledContainers[i]) {
+                //console.log(filledContainers[i].date_published);
+                var timeDiff = now - new Date(filledContainers[i].date_published-7200000);
 
-            const timeDiffString = `${days} Tage ${hours} Stunden ${minutes} Minuten`;
+                var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
+                var timeDiffString = ''
+                if (days > 0) {
+                  var timeDiffString = `${days} d ${hours} h ${minutes} m`;
+                } else if (hours > 0) {
+                  var timeDiffString = `${hours} h ${minutes} m`;
+                }
+                else {
+                  var timeDiffString = `${minutes} m`;
+                }
+                filledContainers[i].publish_string=timeDiffString
+              }
+          }
+          console.log(filledContainers);
+            //const title = filteredData.map(data => data.title);
+
+            const datePublished = Math.max(...filteredData.map(data => data.date_published));
+
+            //const timeDiffString = `${days} d ${hours} h ${minutes} m`;
+
+
+
+            //const rtf = new Intl.RelativeTimeFormat('de', { style: 'short' });
+            
             return (
-              media === "Position" ? <div className='position align-middle'>{container}</div> :
+              media === "Position" ? <div className='position'><span>{container === 1 ? container : container % 5 ? '' : container}</span></div> :
               <div 
                 className='mediaContainer'
                 key={`${media}-${container}`}
@@ -180,9 +200,9 @@ const handleClick = (myLink) => () => {
                     //color: 'black',
                   }}
                   > 
-                    {media}: {title}<br/><br/>
-                    Artikel erschienen vor: {timeDiffString}<br/>
-                    Höchste Position: {highestPosition}<br/>
+                    {media}: {isRed ? filledContainers[container-1].title : ""}<br/><br/>
+                    Artikel erschienen vor: <br/> {isRed ? filledContainers[container-1].publish_string : ""}<br/>
+                    Höchste Position: {isRed ? (filledContainers[container-1].highest_position < container ? filledContainers[container-1].highest_position : container) : ""}<br/>
                     Position aktuell: {container}
                   </Tooltip>
                   </div>
