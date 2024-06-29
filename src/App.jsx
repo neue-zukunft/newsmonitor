@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tooltip'
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
-  const mediaBlocks = ["Tagesschau", "heute", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "rnd", "Welt", "SRF", "NZZ", "Tagesanzeiger"]
+  const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger"]
   
   const mediaBlocksP = [...mediaBlocks, "Position"].sort(() => Math.random() - 0.5);
   const positionIndex = mediaBlocksP.indexOf("Position");
