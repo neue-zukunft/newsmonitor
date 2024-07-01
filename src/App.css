@@ -18,12 +18,13 @@ a {
   color: black;
   text-decoration: underline;
 }
+
 a:hover {
-  color: rgb(219,191,255);
+  color: rgb(219, 191, 255);
 }
 
 a:active {
-  color: rgb(219,191,255);
+  color: rgb(219, 191, 255);
 }
 
 body {
@@ -50,9 +51,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -84,7 +87,7 @@ ul {
   list-style: none;
 }
 
-.headlineblockLeft{
+.headlineblockLeft {
   /* display: inline; */
   font-family: 'ProtestGroteskBold';
   font-style: italic;
@@ -94,54 +97,53 @@ ul {
   margin-bottom: 10px; */
 }
 
-.h1Left{
+.h1Left {
   display: inline;
   font-family: 'ProtestGroteskBold';
   font-style: italic;
   text-align: left
 }
 
-.h2Left{
-  display: inline; 
+.h2Left {
+  display: inline;
   text-align: left
 }
 
-.headlineblockRight{
+.headlineblockRight {
   /* display: inline; */
   text-align: right;
   float: right;
-  clear:right
+  clear: right
 }
 
-.angebotRight{
+.angebotRight {
   /* display: inline; */
   text-align: right;
   font-family: 'Inter';
-  font-style: bold; 
+  font-style: bold;
   margin-top: 10px;
   font-size: 12px
-
 }
 
-.logo{
+.logo {
   /* display: inline; */
   text-align: right;
   width: auto;
-  height:50px;
-  margin-bottom: 10px; 
+  height: 50px;
+  margin-bottom: 10px;
   margin-top: 10px
 }
 
-.logoNM{
+.logoNM {
   /* display: inline; */
   text-align: right;
   width: 250px;
   font-family: 'ProtestGrotesk';
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   margin-top: 10px
 }
 
-.firstBlock{
+.firstBlock {
   /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey; */
@@ -151,18 +153,18 @@ ul {
   width: 70vw;
 }
 
-.secondBlock{
+.secondBlock {
   /* width: 90vw; */
   /*border: 1px solid black;*/
   /*backgroundColor: lightgrey;*/
   font-family: 'Inter';
-  background-color: rgb(255,100,0);
+  background-color: rgb(255, 100, 0);
   color: white;
   padding: 5px;
-  text-align: left ;
+  text-align: left;
 }
 
-.tableBlock{
+.tableBlock {
   display: flex;
   /* width: 90vw; */
   /* border: 1px solid black; */
@@ -170,7 +172,7 @@ ul {
   overflow-x: auto;
 }
 
-.mediaTitle{
+.mediaTitle {
   font-family: 'Inter';
   font-size: 12px;
   text-align: center;
@@ -178,10 +180,10 @@ ul {
   padding-bottom: 5px;
   margin: 5px;
   color: black
-  /* border: 1px solid black */
+    /* border: 1px solid black */
 }
 
-.mediaTitleP{
+.mediaTitleP {
   font-family: 'Inter';
   font-size: 12px;
   text-align: center;
@@ -189,7 +191,7 @@ ul {
   margin-right: 5px;
   margin-top: -11px;
   color: black
-  /* border: 1px solid black */
+    /* border: 1px solid black */
 }
 
 .mediaBlock {
@@ -201,21 +203,21 @@ ul {
   /* border: 1px solid black */
 }
 
-.mediaContainer{
+.mediaContainer {
   padding-top: 4.5px;
   padding-bottom: 4.5px;
   margin: 2px;
   width: 90px;
 }
 
-.position{
-font-size: 8.69px;
-padding-top: 4.5px;
-padding-bottom: 4.5px;
-margin: 1.9px;
-margin-right: auto;
-width: 0px;
-height: 9.23px;
+.position {
+  font-size: 8.69px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  margin: 1.9px;
+  margin-right: auto;
+  width: 0px;
+  height: 9.23px;
 }
 
 h2 {
@@ -223,13 +225,13 @@ h2 {
   font-size: 22px;
 }
 
-.linebeforeabout{
-  border: 1px solid rgb(255,100,0);
+.linebeforeabout {
+  border: 1px solid rgb(255, 100, 0);
   width: 100%;
   margin: 16px 0;
 }
 
-.abouttext{
+.abouttext {
   font-family: 'Inter';
   font-size: 14px;
   text-align: left;
@@ -242,34 +244,32 @@ h2 {
 }
 
 @font-face {
-  font-family: 'ProtestGrotesk'; /* Gewünschter Name */
-  src: 
-       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-Regular.woff') 
-            format('woff'), 
-           /* für moderne Browser */
-       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular.ttf') 
-            format('truetype');
-          /* für Safari, Android, iOS */
- }
- @font-face {
-  font-family: 'ProtestGroteskItalic'; /* Gewünschter Name */
-  src: 
-       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-RegularItalic.woff') 
-            format('woff'), 
-           /* für moderne Browser */
-       url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular+Italic.ttf') 
-            format('truetype');
-          /* für Safari, Android, iOS */
- }
+  font-family: 'ProtestGrotesk';
+  /* Gewünschter Name */
+  src:
+    url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-Regular.woff') format('woff'),
+    /* für moderne Browser */
+    url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular.ttf') format('truetype');
+  /* für Safari, Android, iOS */
+}
 
- 
- @font-face {
-  font-family: 'ProtestGroteskBold'; /* Gewünschter Name */
-  src: 
-       url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font\ Files/02_Web/ProtestGrotesk-190-Bold.woff') 
-            format('woff'), 
-           /* für moderne Browser */
-       url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/03_Variable/ProtestGrotesk-190_Bold+Italic.ttf') 
-            format('truetype');
-          /* für Safari, Android, iOS */
- }
+@font-face {
+  font-family: 'ProtestGroteskItalic';
+  /* Gewünschter Name */
+  src:
+    url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/02_Web/ProtestGrotesk-100-RegularItalic.woff') format('woff'),
+    /* für moderne Browser */
+    url('../fonts/ProtestGrotesk-100-Regular+Italic/01_Font Files/03_Variable/ProtestGrotesk-100_Regular+Italic.ttf') format('truetype');
+  /* für Safari, Android, iOS */
+}
+
+
+@font-face {
+  font-family: 'ProtestGroteskBold';
+  /* Gewünschter Name */
+  src:
+    url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font\ Files/02_Web/ProtestGrotesk-190-Bold.woff') format('woff'),
+    /* für moderne Browser */
+    url('../fonts/ProtestGrotesk-190-Bold+Italic/01_Font Files/03_Variable/ProtestGrotesk-190_Bold+Italic.ttf') format('truetype');
+  /* für Safari, Android, iOS */
+}

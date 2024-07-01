@@ -36,22 +36,9 @@ function App() {
 
   const formattedDataLength = (data.length / (mediaBlocks.length * 50) * 100).toFixed(1) + '%';
 
-  const positions = Array.from({ length: 50 }, (_, index) => {
-    if ((index + 1) % 5 === 0) {
-      return (index + 1).toString();
-    } else {
-      return "";
-    }
-  });
-
   const refAssignCallback = (ref) => {
     if (ref) {
-      //ref available = mounted.
       var element = ref;
-      //var scrollWidth = element.scrollWidth;
-      //var clientWidth = element.getBoundingClientRect().width;
-
-      //explicitly set the scrollTop position of the scrollContainer
       element.scrollLeft = 1000;
       element.scroll({ left: -1000, behavior: 'smooth' });
     }
@@ -59,11 +46,7 @@ function App() {
 
   const handleClick = (myLink) => () => {
     window.open(myLink, '_blank');
-
-    //window.location.target="_blank";
-    //window.location.href=myLink;
   }
-
 
   return (
     <>
@@ -102,20 +85,6 @@ function App() {
           </div>
         </div>
 
-
-
-        {/* 
-      Wieviele Artikel zur Klimakrise finden sich derzeit auf den ersten 50 Positionen der Startseiten von Nachrichtenwebsites? 
-
-      // Hier werden auf den angegeben Medienprotalen in absteigender Reihung die ersten fünfzig Artikelpositionen angezeigt. 
-      // Die grünen Positionen markieren die Artikel, bei denen die Buchstabenfolge "Klima" im Titel oder im Text vorkommt. Das können 
-      // zum Beispiel die Wörter "Klimakrise" oder "Weltklimarat" sein. Gängige falsch-positive 
-      // Begriffe wie "Familienklima" oder "Betriebsklima" werden dabei rausgefiltert. Sollte 
-      // die ganze Anzeige grau sein, so finden sich gerade keine entsprechenden Artikel auf 
-      // den Medienportalen, ein Beispiel findet man <a href={exampleUrl}> hier</a>. Die Anzeige wird alle dreißig Minuten automatisch aktualisiert. 
-      // Die letzte Aktualisierung war .</p> */}
-
-
         <div className='row'>
           <div style={{ display: 'inline' }}>
             <p className='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
@@ -145,8 +114,6 @@ function App() {
                     {containers.map(container => {
                       const isRed = filteredData.map(data => data.position).includes(container);
 
-                      const test = filledContainers.map(data => data);
-
                       const now = new Date();
                       for (let i = 0; i < filledContainers.length; i++) {
                         if (filledContainers[i]) {
@@ -169,16 +136,6 @@ function App() {
                           filledContainers[i].publish_string = timeDiffString
                         }
                       }
-                      //console.log(filledContainers);
-                      //const title = filteredData.map(data => data.title);
-
-                      const datePublished = Math.max(...filteredData.map(data => data.date_published));
-
-                      //const timeDiffString = `${days} d ${hours} h ${minutes} m`;
-
-
-
-                      //const rtf = new Intl.RelativeTimeFormat('de', { style: 'short' });
 
                       return (
                         media === "Position" ? <div className='position'><span>{container === 1 ? container : container % 5 ? '' : container}</span></div> :
@@ -193,9 +150,7 @@ function App() {
                             <div className='d-none d-lg-block'>
                               <Tooltip id={`${media}-${container}`}
                                 style={{
-                                  width: '200px',
-                                  //backgroundColor: 'rgb(219,191,255)',
-                                  //color: 'black',
+                                  width: '200px'
                                 }}
                               >
                                 {media}: {isRed ? filledContainers[container - 1].title : ""}<br /><br />
@@ -225,9 +180,9 @@ function App() {
             </div>
             <h2>Was ist hier zu sehen?</h2>
 
-            Wir von <a href="https://www.neuezukunft.info" target="_blank">NEUE ZUKUNFT</a> denken, dass die Klimakrise in vielen journalistischen Medien in Österreich, Deutschland und der Schweiz deutlich zu wenig Aufmerksamkeit erfährt. 
-            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wie viele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln. Die Seiten werden alle 30 Minuten ausgewertet. 
-            Der Titel und Vorspann jedes Artikels werden nach Begriffen, die “Klima” enthalten, gescannt; bestimmte Begriffe wie “Arbeitsklima” oder “akklimatisieren” werden nicht berücksichtigt. Per Mouseover/Touch ist der Titel entsprechender 
+            Wir von <a href="https://www.neuezukunft.info" target="_blank">NEUE ZUKUNFT</a> denken, dass die Klimakrise in vielen journalistischen Medien in Österreich, Deutschland und der Schweiz deutlich zu wenig Aufmerksamkeit erfährt.
+            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wie viele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln. Die Seiten werden alle 30 Minuten ausgewertet.
+            Der Titel und Vorspann jedes Artikels werden nach Begriffen, die “Klima” enthalten, gescannt; bestimmte Begriffe wie “Arbeitsklima” oder “akklimatisieren” werden nicht berücksichtigt. Per Mouseover/Touch ist der Titel entsprechender
             Beiträge abrufbar – per Klick wird er im Browser geöffnet.
 
             <br />
@@ -239,8 +194,8 @@ function App() {
             <br />
             <h2>Mitmachen</h2>
 
-            Wenn Du die Entwicklung dieses Tools mit unterstützen willst, findest Du hier den Code (<a href="https://github.com/neue-zukunft/newsmonitor" target="_blank">Github</a>). Wir möchten das Tool weiter ausbauen, um noch mehr 
-            Visualisierungen und Auswertungen zu zeigen. Auch wollen wir die Daten als Open Data zur Verfügung stellen. Generell suchen wir nach Menschen, die bei NEUE ZUKUNFT in unterschiedlichen Rollen <a href="https://www.neuezukunft.info/wen-wir-suchen/" target="_blank">mitwirken</a>; 
+            Wenn Du die Entwicklung dieses Tools mit unterstützen willst, findest Du hier den Code (<a href="https://github.com/neue-zukunft/newsmonitor" target="_blank">Github</a>). Wir möchten das Tool weiter ausbauen, um noch mehr
+            Visualisierungen und Auswertungen zu zeigen. Auch wollen wir die Daten als Open Data zur Verfügung stellen. Generell suchen wir nach Menschen, die bei NEUE ZUKUNFT in unterschiedlichen Rollen <a href="https://www.neuezukunft.info/wen-wir-suchen/" target="_blank">mitwirken</a>;
             Du kannst uns auch finanziell <a href="https://www.neuezukunft.info/unterstuetzen/" target="_blank">unterstützen</a>.
             <br />
             <br />
