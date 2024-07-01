@@ -1,5 +1,5 @@
 import './App.css'
-import data from '../public/klimadata.json'
+import rawData from '../public/klimadata.json'
 import logoUrl from '../public/NZ-LOGO-RGB-bw.png'
 import logoNMUrl from '../public/logo_newsm.png'
 import { Tooltip } from 'react-tooltip'
@@ -8,6 +8,8 @@ function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
   const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger"]
+
+  const data = rawData.filter(d => mediaBlocks.includes(d.name));
   
   const mediaBlocksP = [...mediaBlocks, "Position"].sort(() => Math.random() - 0.5);
   const positionIndex = mediaBlocksP.indexOf("Position");
@@ -171,7 +173,7 @@ const handleClick = (myLink) => () => {
                 filledContainers[i].publish_string=timeDiffString
               }
           }
-          console.log(filledContainers);
+          //console.log(filledContainers);
             //const title = filteredData.map(data => data.title);
 
             const datePublished = Math.max(...filteredData.map(data => data.date_published));
