@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tooltip'
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
-  const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger", "nd", "heute"]
+  const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger", "nd", "heute", "Die Presse "]
 
   const data = rawData.filter(d => mediaBlocks.includes(d.name));
 
@@ -181,7 +181,7 @@ function App() {
             <h2>Was ist hier zu sehen?</h2>
 
             Wir von <a href="https://www.neuezukunft.info" target="_blank">NEUE ZUKUNFT</a> denken, dass die Klimakrise in vielen journalistischen Medien in Österreich, Deutschland und der Schweiz deutlich zu wenig Aufmerksamkeit erfährt.
-            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wie viele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln (Österreichische Medien folgen in Kürze). Die Seiten werden alle 30 Minuten ausgewertet.
+            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wie viele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln. Die Seiten werden alle 30 Minuten ausgewertet.
             Der Titel und Vorspann jedes Artikels werden nach Begriffen, die “Klima” enthalten, gescannt; bestimmte Begriffe wie “Arbeitsklima” oder “akklimatisieren” werden nicht berücksichtigt. Per Mouseover/Touch ist der Titel entsprechender
             Beiträge abrufbar – per Klick wird er im Browser geöffnet.
 
