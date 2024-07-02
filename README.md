@@ -2,7 +2,7 @@
 
 Hier findet sich der Newsmonitor der neuen Zukunft.
 
-![Example](https://github.com/neue-zukunft/newsmonitor/blob/main/newsmonitor.png)
+![Example](https://github.com/neue-zukunft/newsmonitor/blob/main/public/newsmonitor.png)
 
 Um den Newsmonitor zum laufen zu bringen ist NodeJS nötig. Nach dem klonen des Verzeichnisses ins Verzeichnis gehen und mit  
 ```
