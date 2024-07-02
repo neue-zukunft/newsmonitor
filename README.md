@@ -13,4 +13,4 @@ npm run dev
 das Programm starten.
 
 ## Lizenz
-GNU General Public License v3.0 or later
+GNU General Public License v3.0 or later (GPL-3.0-or-later)
