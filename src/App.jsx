@@ -34,7 +34,7 @@ function App() {
     minute: '2-digit'
   });
 
-  const formattedDataLength = (data.length / (mediaBlocks.length * 50) * 100).toFixed(1) + '%';
+  const formattedDataLength = (data.length / (mediaBlocks.length * 50) * 100).toFixed(1) + ' %';
 
   const refAssignCallback = (ref) => {
     if (ref) {
@@ -88,7 +88,7 @@ function App() {
         <div className='row'>
           <div style={{ display: 'inline' }}>
             <p className='secondBlock col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-              Zur Zeit handeln {formattedDataLength} der jeweils ersten 50 Artikel auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
+              Zurzeit handeln {formattedDataLength} der jeweils ersten 50 Artikel auf {mediaBlocks.length} News-Startseiten von der Klimakrise --- Stand {lastDate} - {lastTime} Uhr
             </p>
           </div>
         </div>
@@ -181,7 +181,7 @@ function App() {
             <h2>Was ist hier zu sehen?</h2>
 
             Wir von <a href="https://www.neuezukunft.info" target="_blank">NEUE ZUKUNFT</a> denken, dass die Klimakrise in vielen journalistischen Medien in Österreich, Deutschland und der Schweiz deutlich zu wenig Aufmerksamkeit erfährt.
-            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wie viele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln. Die Seiten werden alle 30 Minuten ausgewertet.
+            Das wollen wir mit dem Newsmonitor sichtbar machen. Er zeigt, wieviele der jeweils ersten 50 Beiträge auf den Startseiten Nachrichten-Websites von der Klimakrise handeln. Die Seiten werden alle 30 Minuten ausgewertet.
             Der Titel und Vorspann jedes Artikels werden nach Begriffen, die “Klima” enthalten, gescannt; bestimmte Begriffe wie “Arbeitsklima” oder “akklimatisieren” werden nicht berücksichtigt. Per Mouseover/Touch ist der Titel entsprechender
             Beiträge abrufbar – per Klick wird er im Browser geöffnet.
 
