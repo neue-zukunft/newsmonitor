@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tooltip'
 function App() {
   const containers = Array.from({ length: 50 }, (_, index) => index + 1);
 
-  const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger", "rnd"]
+  const mediaBlocks = ["Tagesschau", "Spiegel", "Zeit", "SZ", "taz", "FAZ", "Welt", "SRF", "NZZ", "Tagesanzeiger", "rnd", "heute"]
 
   const data = rawData.filter(d => mediaBlocks.includes(d.name));
 
