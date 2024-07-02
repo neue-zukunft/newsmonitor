@@ -155,7 +155,7 @@ function App() {
                               >
                                 {media}: {isRed ? filledContainers[container - 1].title : ""}<br /><br />
                                 Artikel erschienen vor: <br /> {isRed ? filledContainers[container - 1].publish_string : ""}<br />
-                                Höchste Position: {isRed ? (filledContainers[container - 1].highest_position < container ? filledContainers[container - 1].highest_position : container) : ""}<br />
+                                Höchste Position: {isRed ? (filledContainers[container - 1].highest_position ? (filledContainers[container - 1].highest_position < container ? filledContainers[container - 1].highest_position : container) : container) : ""}<br />
                                 Position aktuell: {container}
                               </Tooltip>
                             </div>
