@@ -1,6 +1,6 @@
 # Newsmonitor Neue Zukunft
 
-Hier findet sich der Newsmonitor der neuen Zukunft.
+Hier findet sich der Newsmonitor von [Neue Zukunft](https://www.neuezukunft.info).
 
 ![Example](https://github.com/neue-zukunft/newsmonitor/blob/main/public/newsmonitor.png)
 
