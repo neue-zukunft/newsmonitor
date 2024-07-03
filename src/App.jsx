@@ -195,7 +195,7 @@ function App() {
             <h2>Mitmachen</h2>
 
             Wenn Du die Entwicklung dieses Tools mit unterstützen willst, findest Du hier den Code (<a href="https://github.com/neue-zukunft/newsmonitor" target="_blank">Github</a>). Wir möchten das Tool weiter ausbauen, um noch mehr
-            Visualisierungen und Auswertungen zu zeigen. Auch wollen wir die Daten als Open Data zur Verfügung stellen. Generell suchen wir nach Menschen, die bei NEUE ZUKUNFT in unterschiedlichen Rollen <a href="https://www.neuezukunft.info/wen-wir-suchen/" target="_blank">mitwirken</a>;
+            Visualisierungen und Auswertungen zu zeigen. Auch wollen wir die Daten als Open Data zur Verfügung stellen. Generell suchen wir nach Menschen, die bei NEUE ZUKUNFT in unterschiedlichen Rollen <a href="https://www.neuezukunft.info/mitmachen/" target="_blank">mitwirken</a>;
             Du kannst uns auch finanziell <a href="https://www.neuezukunft.info/unterstuetzen/" target="_blank">unterstützen</a>.
             <br />
             <br />
